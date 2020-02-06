@@ -21,8 +21,8 @@ def algo(n):
     return lastPrime
 
 if __name__ == "__main__":
+    n = 600851475143
     start_time = time.time()
-    n= 600851475143
     output = algo(n)
     timeDiff = time.time() - start_time
     print(f"biggest factor of {n}: {output}")
