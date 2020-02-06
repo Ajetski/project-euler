@@ -33,6 +33,6 @@ def algo():
 if __name__ == "__main__":
     start = time.time()
     value = algo()
-    timeDiff = start - time.time()
+    timeDiff = time.time() - start
     print(f"result: {value}")
     print(f"runtime: {timeDiff}")
