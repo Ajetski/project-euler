@@ -6,22 +6,24 @@
 # O(n^2), would be more efficient to generate primes, rather than count up to n; but this would still be O(n^2)
 
 from collections import deque
+import time
 
-def algo(n, primes):
+def algo(n):
     i = 2
+    lastPrime = 0
     while n > 1:
-        print(f"i: {i}, n: {n}")
+        #print(f"i: {i}, n: {n}")
         if n % i == 0:
-            primes.append(i)
+            lastPrime = i
             n = n // i
             i = 2
         i += 1
-    return primes
+    return lastPrime
 
 if __name__ == "__main__":
-    value = algo((600851475143), deque())
-    print(value)
-    product = 1
-    for e in value:
-        product *= e
-    print(f"product of deque: {product}")
+    start_time = time.time()
+    n= 600851475143
+    output = algo(n)
+    timeDiff = time.time() - start_time
+    print(f"biggest factor of {n}: {output}")
+    print(f"runtime: {timeDiff}")
